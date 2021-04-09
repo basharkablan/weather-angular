@@ -1,0 +1,12 @@
+.restrict-height {
+  height: 390px;
+  overflow-y: auto;
+}
+
+.weather-results {
+  font-size: 25px;
+}
+
+.single-weather-results {
+  display: block;
+}

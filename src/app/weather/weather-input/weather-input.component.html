@@ -1,0 +1,55 @@
+<form
+  class="{{ submitted == true ? 'submitted' : '' }}"
+  [formGroup]="weatherInputForm"
+  (ngSubmit)="onSubmit(weatherInputForm)"
+>
+  <div class="row">
+    <div class="col-5">
+      <div class="form-group">
+        <select
+          id="city"
+          formControlName="city"
+          class="form-control custom-select"
+        >
+          <option value="-1" disabled>Select City</option>
+          <option value="Kyiv">Kyiv</option>
+          <option value="Tel Aviv">Tel Aviv</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="form-group">
+        <input
+          class="form-control"
+          formControlName="units"
+          type="text"
+          placeholder="units (standard, imperial, metric)"
+        />
+      </div>
+    </div>
+    <div class="col-2 text-center">
+      <button type="submit" class="btn add-btn">
+        <img src="../../../assets/icons/plus-icon.png" />
+      </button>
+    </div>
+  </div>
+</form>
+<div class="row">
+  <div class="col-10">
+    <div class="text-center mb-3 result-section" *ngIf="weather">
+      {{ weather.cityName }} {{ weather.temp > 0 ? "+" : "-"
+      }}{{ weather.temp | number: "1.0-0" }}&deg;
+      {{
+        weather.units.toLowerCase() == "standard"
+          ? "K"
+          : weather.units.toLowerCase() == "imperial"
+          ? "F"
+          : "C"
+      }}
+      <img
+        class="weather-icon"
+        [src]="'https://openweathermap.org/img/wn/' + weather.icon + '@2x.png'"
+      />
+    </div>
+  </div>
+</div>
