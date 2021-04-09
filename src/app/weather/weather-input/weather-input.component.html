@@ -12,8 +12,9 @@
           class="form-control custom-select"
         >
           <option value="-1" disabled>Select City</option>
-          <option value="Kyiv">Kyiv</option>
-          <option value="Tel Aviv">Tel Aviv</option>
+          <option *ngFor="let city of citiesList" value="{{ city }}">
+            {{ city }}
+          </option>
         </select>
       </div>
     </div>

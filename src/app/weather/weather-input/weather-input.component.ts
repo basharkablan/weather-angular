@@ -21,6 +21,8 @@ export class WeatherInputComponent implements OnInit {
 
   submitted: boolean = false;
 
+  citiesList: string[] = ['Kyiv', 'Tel Aviv', 'Haifa'];
+
   constructor(private store: Store<WeatherState>) {}
 
   ngOnInit() {
