@@ -1,5 +1,5 @@
 {
-  "name": "deloitte-task",
+  "name": "weather-angular",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
